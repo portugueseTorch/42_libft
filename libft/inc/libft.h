@@ -6,7 +6,7 @@
 /*   By: gda-cruz <gda-cruz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 22:23:18 by gda-cruz          #+#    #+#             */
-/*   Updated: 2022/11/02 19:03:26 by gda-cruz         ###   ########.fr       */
+/*   Updated: 2022/12/20 18:16:03 by gda-cruz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,15 @@
 
 /*************** EXTERNAL **************
 *************** LIBRARIES *************/
-# include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <unistd.h>
+# include <sys/types.h>
+# include <sys/stat.h>
 # include <fcntl.h>
+# include <limits.h>
+# include <wait.h>
+# include <err.h>
 
 /************** CHARACTER **************
 **************** RELATED **************/
@@ -87,5 +92,35 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 int		ft_lstsize(t_list *lst);
+
+/************** GET NEXT ***************
+***************** LINE ****************/
+# define BUFFER_SIZE 10
+
+# define OPEN_MAX 256
+
+char	*get_next_line(int fd);
+
+/***************** FT ******************
+**************** PRINTF ***************/
+int		ft_printf(const char *s, ...);
+int		ft_putchar(char c);
+char	*ft_strchr(const char *s, int c);
+void	*ft_redirect(char c);
+void	*ft_redirect_flags(char c, char d);
+int		ft_print_c(char c);
+int		ft_print_i(int n);
+int		ft_print_d(int n);
+int		ft_print_s(char *s);
+int		ft_print_p(unsigned long int mem);
+int		ft_print_x(unsigned int num);
+int		ft_print_ux(unsigned int num);
+int		ft_print_u(unsigned int n);
+
+int		ft_flag_plus(int n);
+int		ft_flag_space(int n);
+int		ft_flag_hash_l(unsigned int n);
+int		ft_flag_hash_u(unsigned int n);
+
 
 #endif
