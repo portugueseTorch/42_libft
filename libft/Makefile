@@ -6,7 +6,7 @@
 #    By: gda-cruz <gda-cruz@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 23:25:19 by gda-cruz          #+#    #+#              #
-#    Updated: 2022/12/20 18:38:50 by gda-cruz         ###   ########.fr        #
+#    Updated: 2022/12/21 00:46:23 by gda-cruz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,13 +27,13 @@ SRC			=	srcs/ft_atoi.c srcs/ft_bzero.c srcs/ft_calloc.c srcs/ft_isalnum.c \
 				srcs/ft_lstadd_back.c srcs/ft_lstadd_front.c srcs/ft_lstclear.c \
 				srcs/ft_lstdelone.c srcs/ft_lstiter.c srcs/ft_lstlast.c srcs/ft_lstmap.c \
 				srcs/ft_lstnew.c srcs/ft_lstsize.c \
-				srcs/get_next_line.c srcs \
+				srcs/get_next_line.c \
 				srcs/ft_print_c.c srcs/ft_print_d.c srcs/ft_print_i.c srcs/ft_print_p.c \
 				srcs/ft_print_s.c srcs/ft_print_u.c srcs/ft_print_x.c srcs/ft_print_X.c \
-				srcs/ft_printf.c srcs/ft_redirect.c
+				srcs/ft_printf.c srcs/ft_redirect.c srcs/ft_flags_bonus.c
 
 OBJ				= $(SRC:srcs/%.c=$(OBJ_DIR)/%.o)
-OBJ_DIR			=	./objects
+OBJ_DIR			= objects
 
 CC				= gcc
 CFLAGS			= -Wall -Wextra -Werror -I$(INC_DIR)
@@ -45,9 +45,7 @@ $(NAME):		$(OBJ) | $(OBJ_DIR)
 	@ranlib $(NAME)
 
 $(OBJ_DIR)/%.o:	srcs/%.c | BUILD_DIR
-	$(CC) $(CFLAGS) -c $(^) -o $(@)
-
-.SILENT = $(OBJ)
+	@$(CC) $(CFLAGS) -c $(^) -o $(@)
 
 BUILD_DIR:
 	@mkdir -p $(OBJ_DIR)

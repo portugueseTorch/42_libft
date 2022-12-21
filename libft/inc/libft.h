@@ -6,7 +6,7 @@
 /*   By: gda-cruz <gda-cruz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 22:23:18 by gda-cruz          #+#    #+#             */
-/*   Updated: 2022/12/20 18:16:03 by gda-cruz         ###   ########.fr       */
+/*   Updated: 2022/12/21 00:48:16 by gda-cruz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 *************** LIBRARIES *************/
 # include <stdlib.h>
 # include <stdio.h>
+# include <stdarg.h>
 # include <unistd.h>
 # include <sys/types.h>
 # include <sys/stat.h>
@@ -121,6 +122,5 @@ int		ft_flag_plus(int n);
 int		ft_flag_space(int n);
 int		ft_flag_hash_l(unsigned int n);
 int		ft_flag_hash_u(unsigned int n);
-
 
 #endif

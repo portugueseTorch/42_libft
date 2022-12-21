@@ -6,7 +6,7 @@
 /*   By: gda-cruz <gda-cruz@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 23:34:55 by gda-cruz          #+#    #+#             */
-/*   Updated: 2022/10/10 23:34:59 by gda-cruz         ###   ########.fr       */
+/*   Updated: 2022/12/21 00:50:51 by gda-cruz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ char	*ft_strdup(const char *s)
 
 	length = 0;
 	i = 0;
+	if (!s)
+		return (NULL);
 	while (s[length])
 		length++;
 	dup = (char *)malloc(sizeof(char) * (length + 1));
-	if (!s || !dup)
+	if (!dup)
 		return (NULL);
 	while (s[i])
 	{
